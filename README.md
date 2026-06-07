@@ -1,15 +1,22 @@
-# Contribution [#]: [Issue Title]
+# Contribution 1: Sentry: Sentry issues stats for "All" crash frontend.
 
-**Contribution Number:** [1 / 2 / 3]  
-**Student:** [Your Name]  
-**Issue:** [GitHub issue link]  
-**Status:** [Phase I / Phase II / Phase III / Phase IV] [In Progress / Complete]
+**Contribution Number:** 1
+
+**Student:** Grace Shao
+
+**Issue:** [GitHub issue link](https://github.com/backstage/community-plugins/issues/8372)  
+
+**Status:** [Phase I ] [In Progress / Complete]
 
 ---
 
 ## Why I Chose This Issue
 
 [1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
+I chose issue 3725 Sentry: Sentry issues stats for "All" crash frontend because I was able to reproduce part of the problem locally. The issue is labeled as "help wanted" and "bug" and not published too long ago (this year march 31) and doesn't have a large stream of comments in discussion page so this seemed like a good beginner issue to work on.
+The project tech stack I also have experience in (Typescript)
+
+Left a comment on the issue introducing myself — still waiting on maintainer to confirm whether this issue still needs help.
 
 ---
 
