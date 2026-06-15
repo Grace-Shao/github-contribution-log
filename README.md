@@ -23,20 +23,20 @@ Left a comment on the issue introducing myself — still waiting on maintainer t
 ## Understanding the Issue
 
 ### Problem Description
+In the sentry mock app, when you choose from All time range, the label "states for 24 hr" should update and there should be a bug that says "invalid unit value - infinity"
 
-[In your own words, what's broken or missing?]
 
 ### Expected Behavior
 
-[What should happen?]
+No bug [as described above] and labels update
 
 ### Current Behavior
 
-[What actually happens?]
+See problem description.
 
 ### Affected Components
 
-[Which parts of the codebase are involved?]
+Community-plugins/sentry and backend folder
 
 ---
 
@@ -48,15 +48,16 @@ Left a comment on the issue introducing myself — still waiting on maintainer t
 
 ### Steps to Reproduce
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
+1. cd into workspace
+2. yarn install
+3. yarn workspace @backstage-community/plugin-sentry start
+4. Local environment should spin up
 
 ### Reproduction Evidence
 
-- **Commit showing reproduction:** [Link to commit in your fork]
+- **Commit showing reproduction:** [[Link to commit in your fork]](https://github.com/backstage/community-plugins/compare/main...Grace-Shao:community-plugins:reproduction?expand=1)
 - **Screenshots/logs:** [If applicable]
-- **My findings:** [What you discovered during reproduction]
+- **My findings:** I'm still not seeing the exact bug (the infinity error). Perhaps because the backend also needs to be spun up?
 
 ---
 
