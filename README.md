@@ -6,13 +6,12 @@
 
 **Issue:** [GitHub issue link](https://github.com/backstage/community-plugins/issues/8372)  
 
-**Status:** [Phase I ] [In Progress / Complete]
+**Status:** [Phase 2] [Complete]
 
 ---
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
 I chose issue 3725 Sentry: Sentry issues stats for "All" crash frontend because I was able to reproduce part of the problem locally. The issue is labeled as "help wanted" and "bug" and not published too long ago (this year march 31) and doesn't have a large stream of comments in discussion page so this seemed like a good beginner issue to work on.
 The project tech stack I also have experience in (Typescript)
 
@@ -23,7 +22,7 @@ Left a comment on the issue introducing myself — still waiting on maintainer t
 ## Understanding the Issue
 
 ### Problem Description
-In the sentry mock app, when you choose from All time range, the label "states for 24 hr" should update and there should be a bug that says "invalid unit value - infinity"
+In the sentry mock app, when you choose from All time range, the label "stats for 24 hr" should not update and there should be a bug that says "invalid unit value - infinity"
 
 
 ### Expected Behavior
@@ -64,31 +63,33 @@ Community-plugins/sentry and backend folder
 ## Solution Approach
 
 ### Analysis
+I believe that the subtitle listed in the image actually describes the Graph time period as only `statsPeriod` from production-api.ts:53-54 uses it to generate the graph, it doesn't seem to have any relation with the drop down UI filtering.
 
-[Your analysis of the root cause - what's causing the issue?]
+Also I believe the `When select "All" front crash (Image 2).. ` is already addressed by a previous commit on main "fix(sentry): use useMemo for issue filtering to sync with async data (#7523)"
+
 
 ### Proposed Solution
 
-[High-level description of your fix approach]
+[High-level description of your fix approach] Rename the label in the frontend to clarify the 24hr time period is for the graph but not changing any of the underlying code.
 
 ### Implementation Plan
 
 Using UMPIRE framework (adapted):
 
-**Understand:** [Restate the problem]
+**Understand:** [Restate the problem] The label "stats for 24 hr" is not update
 
-**Match:** [What similar patterns/solutions exist in the codebase?]
+**Match:** [What similar patterns/solutions exist in the codebase?] Nothing really similar in the codepbase
 
 **Plan:** [Step-by-step implementation plan]
-1. [Modify file X to do Y]
-2. [Add function Z]
-3. [Update tests]
+1. Update the frontend SentryIssuesTable.tsx (1 commit only)
+2. Add a .changeset (rules of contributing)
+3. Update the SentryIssuesTable.test.tsx to account for the new label update
 
-**Implement:** [Link to your branch/commits as you work]
+**Implement:** [PR here](https://github.com/backstage/community-plugins/pull/9503)
 
 **Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
 
-**Evaluate:** [How will you verify it works?]
+**Evaluate:** [How will you verify it works?] Passes all unit test and solution shows up locally
 
 ---
 
