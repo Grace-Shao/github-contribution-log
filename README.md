@@ -6,7 +6,7 @@
 
 **Issue:** [GitHub issue link](https://github.com/backstage/community-plugins/issues/8372)  
 
-**Status:** [Phase 2] [Complete]
+**Status:** [Phase 3] [Complete]
 
 ---
 
@@ -97,18 +97,16 @@ Using UMPIRE framework (adapted):
 
 ### Unit Tests
 
-- [ ] Test case 1: [Description]
-- [ ] Test case 2: [Description]
-- [ ] Test case 3: [Description]
+- [X] Test case 1: Modifying existing test case that checks for the UI label
+(other test cases are not needed because simple UI change)
 
 ### Integration Tests
 
-- [ ] Integration scenario 1
-- [ ] Integration scenario 2
+- Did not write integration tests because simple UI change
 
 ### Manual Testing
 
-[What you tested manually and results]
+Viewed in my local environment the changes made to the front end (confirmed it successfully updated the UI). Ran the existing test suite related to the UI change
 
 ---
 
