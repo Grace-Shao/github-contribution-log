@@ -6,7 +6,7 @@
 
 **Issue:** [GitHub issue link](https://github.com/backstage/community-plugins/issues/8372)  
 
-**Status:** [Phase 3] [Complete]
+**Status:** [Phase 4] [Complete]
 
 ---
 
@@ -130,15 +130,21 @@ Viewed in my local environment the changes made to the front end (confirmed it s
 
 ## Pull Request
 
-**PR Link:** [GitHub PR URL when submitted]
+**PR Link:** [PR here](https://github.com/backstage/community-plugins/pull/9503)
 
-**PR Description:** [Draft or final PR description - much of the content above can be adapted]
+**PR Description:** Resolves #8372. I believe the "All" crash is already fixed by "fix(sentry): use useMemo for issue filtering to sync with async data (#7523)" on main. This PR fixes the label issue described in the issue instead.
+
+The Sentry issues table showed a subtitle reading "Stats for 24h", which made it look like the label should update when you change the dropdown. The two are actually unrelated:
+
+statsFor (the subtitle's source prop) controls the sparkline graph's stats period. It's passed to the Sentry API as statsPeriod and is currently hardcoded as '24hr'.
+The dropdown is an independent client-side row filter on each issue's lastSeen; it never updates/touches statsFor and does not seem to be related to it.
+I reworded the subtitle to "Graph shows the last 24h" so it clearly describes the graph rather than implying its related to the dropdown. Let me know if this was the intended functionality or not!
 
 **Maintainer Feedback:**
 - [Date]: [Summary of feedback received]
 - [Date]: [How you addressed it]
 
-**Status:** [Awaiting review / Iterating / Approved / Merged]
+**Status:** [Awaiting review]
 
 ---
 
